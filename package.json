@@ -9,10 +9,14 @@
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
-    "babel-preset-es2015": "^6.24.1"
+    "babel-preset-es2015": "^6.24.1",
+    "eslint": "^3.19.0",
+    "npm-run-all": "^4.0.2"
   },
   "scripts": {
-    "start": "babel-node index.js",
+    "start": "npm-run-all --parallel startserver lint",
+    "startserver": "babel-node index.js",
+    "lint": "eslint index.js src/**/*.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Paikius <paikius@gmail.com>",
